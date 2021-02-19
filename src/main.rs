@@ -1,6 +1,7 @@
 use console::Term;
 use rand::Rng;
 use std::io::{stdin, stdout, Read, Write};
+use std::process;
 use std::thread;
 use std::time::Duration;
 
@@ -43,6 +44,16 @@ fn main() {
             }
         }
         Err(e) => println!("how: {}", e),
+    }
+}
+
+fn dashboard() {
+    unsafe {
+        println!("Number Memory: {}\n\nEnter to go back"
+        ,NUMBER_MEMORY_SCORE);
+        pause();
+        // for now it quits
+        process::exit(1);
     }
 }
 
